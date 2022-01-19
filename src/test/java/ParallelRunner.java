@@ -13,7 +13,7 @@ import java.util.List;
 import static org.junit.Assert.assertTrue;
 
 
-public class TestRunner {
+public class ParallelRunner {
     @Test
     public void testParallel() {
         Results results = Runner.parallel(getClass(), 5);

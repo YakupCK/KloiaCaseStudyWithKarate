@@ -1,3 +1,22 @@
+@Test
+  Feature: Task-3: Post
+    Background:
+      * def userGenerator = Java.type("utils.CreateUser")
+      * def userInfo = userGenerator.getUserInfo()
+      * string requestId = "" + userInfo.id + ""
+
+    Scenario: Create a new user
+      Given url "https://petstore.swagger.io/v2"
+      * path "user"
+      * header Accept = "application/json"
+      * header Content-Type = "application/json"
+      * print userInfo
+      * request userInfo
+      When method POST
+      Then status 200
+      * match response.message == requestId
+
+
 #  Task-3
 #  ● Set the Content-type=application/json
 #  ● Set path user
@@ -19,25 +38,5 @@
 #  ● Verify the below requested in the response:
 #    ○ Status code should be 200
 #    ○ message should be equal to the posted id
-
-  Feature: Task-3: Post
-    Background:
-      * def userGenerator = Java.type("utils.CreateUser")
-      * def userInfo = userGenerator.getUserInfo()
-      * string requestId = "" + userInfo.id + ""
-
-    Scenario: Create a new user
-      Given url "https://petstore.swagger.io/v2"
-      * path "user"
-      * header Accept = "application/json"
-      * header Content-Type = "application/json"
-      * print userInfo
-      * request userInfo
-      When method POST
-      Then status 200
-      * match response.message == requestId
-
-
-
 
 
