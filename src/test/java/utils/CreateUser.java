@@ -23,7 +23,7 @@ public class CreateUser {
 
 	}
 
-	/*
+/*
 		{
 			"id": 0,
 			"username": "string",
@@ -34,7 +34,7 @@ public class CreateUser {
 			"phone": "string",
 			"userStatus": 0
 		}
- */
+*/
 
 
 }

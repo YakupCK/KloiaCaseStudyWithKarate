@@ -27,14 +27,7 @@ Feature: Task-4: Call feature
     Then status 200
     * match response.message == requestId
 
-  @Test
+
   Scenario: Call previous scenario with parameters
     * def caller = call read("Call.feature@previous") {username : 'KLOIAUSERNAME', lastName : 'KLOIALASTNAME'}
     * print caller.response
-
-
-#  Task-4
-#  ● Create a scenario by copying Task-3
-#  ● Modify the scenario to take username and lastname as parameter
-#  ● Rest of the JSON field can be generated inside the scenario randomly
-#  ● Call this scenario in other scenario by giving your name and last name as parameter
